@@ -1,0 +1,95 @@
+.LoginBody {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+ 
+  /* min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('../assets/pet.jpg');
+  
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+
+
+}
+
+.LoginForm {
+  
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+  width: 420px;
+  margin: 60px auto;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  margin: 60px auto;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+.LoginInput {
+  margin: 12px ;
+}
+
+.LoginButton {
+  background: #0e81d3;
+  color: #fff;
+  border-radius: 8px;
+  width: 120px;
+  height: 40px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 8px;
+}
+
+.LoginButton:hover {
+  background-color: #0c6fb5;
+  color: #ffffff;
+}
+
+/* Register button text */
+.Register-Button {
+  color: #c20f0f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.Register-Button:hover {
+  color: #d49b2f;
+}
+.Login{
+  text-align: center;
+  font-weight: bold;
+  color: #365a5fd0;
+
+}
+.button1{
+  display: flex;
+  /* flex-direction: column;
+  align-items: center; */
+  justify-content: center;
+}
+.registerpara{
+  margin-top: 4px;
+  text-align: center;
+  font-weight: 100;
+  font-size: smaller;
+}
+.labellogin{
+  padding-left:15px;
+}

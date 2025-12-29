@@ -1,0 +1,253 @@
+ body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+} 
+
+/* Form Wrapper 
+
+Table Alignment
+ table {
+  width: 90%;
+} */
+
+td {
+  padding: 10px 5px;
+  vertical-align: middle;
+}
+
+/* Labels */
+label {
+  font-size: 14px;
+  color: #000000;
+  font-weight: 500;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  background: #f8fbfc;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  border-color: #189ab4;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(24, 154, 180, 0.3);
+  outline: none;
+}
+
+/* Button */
+.ShopRegister{
+  width: 100%;
+  padding: 10px;
+  margin-left: 100px;
+  background: #189ab4;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+
+}
+.shopheader{
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+  background-color: rgba(219, 210, 151, 0.427);
+  width: 400px;
+  margin: auto;
+  padding: 5px;
+  border-radius: 12px;
+  margin-top: 35px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+
+}
+
+
+button:hover {
+  background: #0f778a;
+  transform: translateY(-2px);
+}
+
+/* For the single button row */
+tr:last-child td {
+  padding-top: 20px;
+}
+.register{
+    /* display: flex; */
+    /* text-align: center !important; */
+    font-weight: bold;
+    color: #365a5fd0;
+    font-size: 20px;
+    font-weight: bold;
+    /* justify-content: center; */
+    
+}
+
+/* .tableheader{
+  display: flex;
+  justify-content: center;
+} */
+.fontsize label{
+    font-size: 16px;
+}
+.TrackOrder{
+    margin-top:15px;
+    /* margin-left:50px; */
+    /* margin-right:50px; */
+ 
+}
+.orderh1{
+    text-align: center;
+    margin-top: 30px;
+    color: black;
+    font-weight: bold;
+}
+/* {######################################## ADD PRODUCT #################################} */
+.addproduct-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #0b8793, #360033);
+}
+
+.addproduct {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.addproduct label {
+  font-size: 14px;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+.addproduct input {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #bebebe;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.25s;
+}
+
+.addproduct input:focus {
+  border-color: #0b8793;
+  box-shadow: 0 0 5px rgba(11, 135, 147, 0.4);
+}
+
+.addproduct button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background: #0b8793;
+  color: white;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.addproduct button:hover {
+  background: #086f79;
+}
+.desc-box {
+  width: 100%;
+  height: 120px;     /* controls vertical size */
+  padding: 10px;
+  border: 1px solid #777;
+  border-radius: 6px;
+  font-size: 16px;
+  resize: vertical;   /* allow user to resize vertically only */
+  outline: none;
+}
+
+.desc-box:focus {
+  border-color: #0a9ecf;
+  box-shadow: 0 0 4px rgba(10, 158, 207, 0.4);
+}
+.price-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.price-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #777;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.currency-select {
+  width: 120px;
+  padding: 8px;
+  border: 1px solid #777;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: white;
+}
+.quantity-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 5px 0 15px 0;
+}
+
+.qty-input {
+  width: 120px;
+  padding: 8px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+}
+
+.qty-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+.qty-unit {
+  padding: 8px;
+  width: 140px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.qty-unit:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+.producth1{
+    text-align: center;
+    font-weight: bold;
+    color: #365a5fd0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.shopform{
+  display: flex;
+  justify-content: center;
+  
+}
+

@@ -1,0 +1,15 @@
+body{
+  height: 100vh;
+  font-family: 'Lato', sans-se/rif; 
+  /* background: linear-gradient(to bottom right, #0b8793, #360033); */
+background: linear-gradient(to top left, #6AA6A1, #c99f57);
+}
+h1{
+  text-align: center;
+  font-weight: bold;
+  /* color: #2F4F4F; */
+  color:#ffffff ;
+  font-family: 'Lato', sans-serif;
+  margin-top: 10px;
+
+}
