@@ -2,7 +2,32 @@ import React from 'react'
 import Table from 'react-bootstrap/Table';
 import './Admin.css'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import api from '../api';
+import { useEffect } from 'react';
 function ManageDoctor() {
+  const[doctor,setDoctor]=useState([]);
+  const fetchDoctor=async(req,res)=>{
+    try{
+      const res=await api.get("/admin/viewalldoctors")
+      // console.log(res)
+      setDoctor(res.data.doctor)
+    }
+    catch(e){
+      console.log(e);
+    }
+  }
+   useEffect(()=>{fetchDoctor()},[])
+    // console.log(doctor);
+
+    // const handleDelete = async(id)=>{
+    //   // console.log(id);
+    //   try{
+    //     cost 
+    //   }
+      
+    // }
+
   return (
     <div>
       <h1>Doctor<span className='second'> Info</span></h1>
@@ -22,18 +47,33 @@ function ManageDoctor() {
             <th>License No</th>
             <th>Clinic Name</th>
             <th>Clinic Address</th>
+            <th>Image</th>
+            <th>Action</th>
           </tr>
-          <tr>
-          <td>1</td>
-          <td>Dr. John</td>
-          <td>john@example.com</td>
-          <td>9876543210</td>
-          <td>BVSc</td>
-          <td>5</td>
-          <td>VET12345</td>
-          <td>Pet Care Clinic</td>
-          <td>Kozhikode</td>
+
+          {doctor.map((d,i)=>
+          <tr key={d._id}>
+          <td>{i+1}</td>
+          <td>{d.name}</td>
+          <td>{d.email}</td>
+          <td>{d.phone}</td>
+          <td>{d.qualification}</td>
+          <td>{d.experience}</td>
+          <td>{d.licenseno}</td>
+          <td>{d.clinicname}</td>
+          <td>{d.clinicaddress}</td>
+<td>
+  <img
+  src={`http://localhost:8000/${d.image.replace(/\\/g, "/")}`}
+  alt="doctor"
+  style={{width:"50px"}}
+/>
+</td>
+          {/* <td><button className="btn btn-danger btn-sm ms-2" onClick={()=>handleDelete(d._id)}>Delete</button></td> */}
+          
+          
         </tr>
+        )}
         </thead>
         <tbody>
           

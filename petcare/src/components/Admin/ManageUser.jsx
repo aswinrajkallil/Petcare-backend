@@ -1,7 +1,9 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table';
 import './Admin.css' 
+import api from '../api';
 function ManageUser() {
+
   return (
     <div>
       <h1>User Controls</h1>

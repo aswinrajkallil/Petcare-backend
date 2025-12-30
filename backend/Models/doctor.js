@@ -1,10 +1,7 @@
 import mongoose,{ Schema } from "mongoose";
 
 const doctorSchema=new Schema({
-    username:{
-        type:String,
-        required:true,
-    },
+
     name:{
         type:String,
         required:true,
@@ -13,8 +10,8 @@ const doctorSchema=new Schema({
         type:Number,
         required:true,
     },
-     age:{
-        type:Number,
+     email:{
+        type:String,
         required:true,
      },
     qualification:{
@@ -37,6 +34,13 @@ const doctorSchema=new Schema({
         type:String,
         required:true,
     },
+    image:{
+        type:String,
+    },
+    commonkey:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Login"
+    }
 
 })
 const DoctorData=mongoose.model("Doctor",doctorSchema)
