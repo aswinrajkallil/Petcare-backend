@@ -5,85 +5,99 @@
   display: flex;
   justify-content: center;
   padding: 30px;
+  background-color: var(--bg-color);
+  min-height: calc(100vh - 60px);
+}
+
+.form-group {
+  margin-bottom: 16px;
 }
 
 .form-card {
   width: 100%;
-  max-width: 700px;
-  background: var(--bg-card);
-  padding: 30px;
+  max-width: 600px;
+  background: var(--white);
+  padding: 40px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  border: 1px solid var(--grey-dark);
 }
 
 /* ===============================
-   TABLE (INDUSTRY STANDARD)
+   TABLE
 ================================ */
 table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--bg-card);
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 thead {
-  background: #f8fafc;
+  background: var(--grey);
 }
 
 th {
   text-align: left;
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-muted);
-  padding: 14px;
-  border-bottom: 1px solid var(--border);
+  color: var(--text-color);
+  padding: 16px;
+  border-bottom: 2px solid var(--grey-dark);
 }
 
 td {
-  padding: 14px;
-  border-bottom: 1px solid var(--border);
+  padding: 16px;
+  border-bottom: 1px solid var(--grey-dark);
   font-size: 14px;
+  color: var(--text-color);
 }
 
 tr:hover {
-  background-color: #f9fafb;
+  background-color: var(--primary-light);
 }
 
 /* ===============================
    INPUTS
 ================================ */
 label {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-color);
+  margin-bottom: 6px;
+  display: block;
 }
 
 input,
 select,
 textarea {
   width: 100%;
-  padding: 10px 12px;
+  padding: 12px;
   font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: #f8fafc;
+  border-radius: var(--radius);
+  border: 1px solid var(--grey-dark);
+  background: var(--white);
   transition: all 0.2s ease;
+  margin-bottom: 16px;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  background: #ffffff;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background: var(--white);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
 }
 
 /* ===============================
    BUTTONS
 ================================ */
 button {
-  padding: 12px;
-  border-radius: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius);
   border: none;
   font-size: 14px;
   font-weight: 600;
@@ -94,13 +108,17 @@ button {
 /* Primary */
 .ShopRegister,
 .addproduct button {
-  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  background: var(--primary-color);
   color: white;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .ShopRegister:hover,
 .addproduct button:hover {
-  background: var(--primary-dark);
+  background: var(--primary-hover);
   transform: translateY(-1px);
 }
 
@@ -109,9 +127,10 @@ button {
 ================================ */
 .shopheader {
   text-align: center;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: var(--primary-color);
 }
 
 /* ===============================
@@ -122,15 +141,18 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--bg-color);
+  padding: 20px;
 }
 
 .addproduct {
   width: 100%;
-  max-width: 420px;
-  background: var(--bg-card);
-  padding: 30px;
+  max-width: 500px;
+  background: var(--white);
+  padding: 40px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  border: 1px solid var(--grey-dark);
 }
 
 /* Description */
@@ -143,7 +165,7 @@ button {
 .price-row,
 .quantity-box {
   display: flex;
-  gap: 12px;
+  gap: 16px;
 }
 
 .currency-select,
@@ -155,6 +177,7 @@ button {
    RESPONSIVE
 ================================ */
 @media (max-width: 600px) {
+
   .form-card,
   .addproduct {
     padding: 20px;
@@ -163,5 +186,6 @@ button {
   .price-row,
   .quantity-box {
     flex-direction: column;
+    gap: 0;
   }
 }

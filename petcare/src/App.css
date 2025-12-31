@@ -1,33 +1,12 @@
 /* ===============================
-   GLOBAL APP THEME (SaaS STANDARD)
+   GLOBAL APP THEME
 ================================ */
 
-:root {
-  --primary: #2563eb;        /* Blue-600 */
-  --primary-dark: #1e40af;
-  --bg-main: #f1f5f9;        /* Slate-100 */
-  --bg-card: #ffffff;
-  --border: #e2e8f0;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --radius: 10px;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
+/* Variables are defined in index.css */
 
 body {
-  font-family: "Inter", "Lato", sans-serif;
-  background-color: var(--bg-main);
-  color: var(--text-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* Headings */
@@ -36,7 +15,7 @@ h1 {
   font-weight: 700;
   text-align: center;
   margin: 20px 0;
-  color: var(--text-main);
+  color: var(--primary-color);
 }
 
 /* App container */

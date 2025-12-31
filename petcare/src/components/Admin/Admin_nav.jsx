@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../Logo";
 import './Admin.css';
 
 function AdminNavbar() {
   return (
     <nav className="admin-nav">
-      <div className="admin-logo">Admin Panel</div>
+      <div className="admin-logo">
+        <Logo width={30} height={30} className="nav-logo-icon" />
+        Admin Panel
+      </div>
 
       <ul className="admin-links">
         <li><Link to="/viewuser">Users</Link></li>

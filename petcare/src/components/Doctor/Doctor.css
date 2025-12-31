@@ -1,23 +1,10 @@
-:root {
-  --primary: #0b8793;          /* teal */
-  --primary-dark: #086f79;
-  --accent: #c99f57;           /* ORANGE used in app */
-  --bg: #f6f8f9;
-  --card: #ffffff;
-  --border: #e3e8eb;
-  --text-main: #1f2d2e;
-  --text-muted: #6b7c7d;
-  --radius: 12px;
-  --shadow: 0 10px 26px rgba(0,0,0,0.08);
-}
-
 /* ===============================
    LAYOUT
 ================================ */
 .doctor-dashboard {
   display: flex;
   min-height: 100vh;
-  background: var(--bg);
+  background: var(--bg-color);
   font-family: "Inter", "Lato", sans-serif;
 }
 
@@ -26,20 +13,22 @@
 ================================ */
 .doctor-sidebar {
   width: 260px;
-  background: linear-gradient(
-    180deg,
-    var(--primary),
-    var(--primary-dark)
-  );
-  color: #ffffff;
+  background: var(--white);
+  border-right: 1px solid var(--grey-dark);
+  color: var(--text-color);
   padding: 26px;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 35px;
-  color: #ffffff;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .doctor-sidebar ul {
@@ -50,14 +39,16 @@
 .doctor-sidebar li {
   padding: 12px 14px;
   margin-bottom: 8px;
-  border-radius: 8px;
+  border-radius: var(--radius);
   cursor: pointer;
   font-weight: 500;
   transition: all 0.25s ease;
+  color: var(--text-color);
 }
 
 .doctor-sidebar li:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--primary-light);
+  color: var(--primary-color);
 }
 
 /* ===============================
@@ -66,16 +57,18 @@
 .doctor-main {
   flex: 1;
   padding: 32px;
+  background-color: var(--bg-color);
 }
 
 .doctor-main h1 {
   font-size: 28px;
   margin-bottom: 6px;
-  color: var(--text-main);
+  color: var(--primary-color);
+  text-align: left;
 }
 
 .subtitle {
-  color: var(--text-muted);
+  color: #666;
   margin-bottom: 34px;
 }
 
@@ -89,27 +82,28 @@
 }
 
 .card {
-  background: var(--card);
+  background: var(--white);
   padding: 26px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  border-top: 4px solid var(--accent); /* ORANGE highlight */
+  border-top: 4px solid var(--primary-color);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid var(--grey-dark);
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
 }
 
 .card h3 {
   margin-bottom: 10px;
-  color: var(--primary);
+  color: var(--primary-color);
 }
 
 .card p {
   font-size: 14px;
-  color: var(--text-muted);
+  color: #666;
   margin-bottom: 22px;
 }
 
@@ -117,22 +111,18 @@
    BUTTONS
 ================================ */
 .card button {
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--accent)
-  );
+  background: var(--primary-color);
   color: white;
   border: none;
   padding: 11px 16px;
-  border-radius: 8px;
+  border-radius: var(--radius);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
 }
 
 .card button:hover {
-  opacity: 0.95;
+  background-color: var(--primary-hover);
   transform: translateY(-1px);
 }
 

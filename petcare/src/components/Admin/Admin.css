@@ -1,123 +1,113 @@
 .custom-table-container {
-  margin-left: 40px;
-  margin-right: 40px;
+  margin: 20px 40px;
 }
+
 .admin-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to  left, #6AA6A1, #C9A66B);
-
-  padding: 12px 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  padding-bottom: 2px;
+  background: var(--white);
+  padding: 12px 24px;
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--grey-dark);
 }
 
 .admin-logo {
-  color: white;
+  color: var(--primary-color);
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-icon {
+  color: var(--primary-color);
 }
 
 .admin-links {
   list-style: none;
   display: flex;
   gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .admin-links li a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 16px;
-  transition: 0.2s;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  padding-bottom: 4px;
 }
 
 .admin-links li a:hover {
-  color: #ffd166;
-  padding-bottom: 3px;
-  border-bottom: 2px solid #ffd166;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
 }
-/* {################################################# REGISTER ##################################################} */
-/* Container for the entire page */
+
+/* Register Doctor Form */
 .register-doctor-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
-  background: #f8f9fa; /* light background */
-  min-height: 100vh;
+  padding: 40px 20px;
+  background: var(--bg-color);
+  min-height: calc(100vh - 60px);
 }
 
-/* Form box */
 .register-doctor-form {
-  background: white;
-  padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
-  width: 480px;
-}
-
-/* Table inside form */
-.register-doctor-form table {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   width: 100%;
+  max-width: 600px;
+  border: 1px solid var(--grey-dark);
 }
 
-.register-doctor-form td {
-  padding: 10px 0;
-  vertical-align: top;
+.form-group {
+  margin-bottom: 16px;
 }
 
-/* Labels */
-.register-doctor-form label {
+.form-group label {
   font-weight: 600;
-  color: #2F4F4F;
-  font-size: 15px;
+  color: var(--text-color);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
 }
 
-/* Inputs */
-.register-doctor-form input,
-.register-doctor-form textarea {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #bbb;
-  border-radius: 6px;
-  outline: none;
-  font-size: 15px;
-  margin-left: 10px;
-}
-
-.register-doctor-form textarea {
-  height: 70px;
-  resize: none;
-}
-
-/* Submit Button */
-.register-doctor-form button {
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 12px;
-  background-color: #4F7F7A; /* Your theme color */
-  border: none;
-  border-radius: 6px;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 10px;
+  border: 1px solid var(--grey-dark);
+  border-radius: var(--radius);
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  background-color: var(--white);
 }
 
-.register-doctor-form button:hover {
-  background-color: #3d6560;
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-light);
 }
-/* ************************************************ DOCTOR REGISTER ************************************************* */
-.lftDoctor{
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.lftDoctor {
   display: flex;
-  justify-content: end;
-  margin-right: 40px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-}
-/* lllllllllllllllllllllllllllllllllllllllllllllllll */
-.second{
-  color:#2F6F6A;
+  justify-content: flex-end;
+  margin: 20px 40px 10px;
 }
 
+.second {
+  color: var(--primary-color);
+}

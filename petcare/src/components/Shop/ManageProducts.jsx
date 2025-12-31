@@ -7,18 +7,6 @@ import { Link } from 'react-router-dom';
 function ManageProducts() {
   return (
     <div> 
-            <aside className="sidebar">
-        <h2 className="logo">My Shop</h2>
-        <ul className="menu">
-        
-          <Link to={'/addproducts'}><li>Add Product</li></Link>
-          <Link to ={'/manageproducts'}><li>Manage Products</li></Link>
-          <Link to ={'/trackorder'}><li>Track Orders</li></Link>
-          <Link to ={'/customersupport'}><li>Customer Support</li></Link> 
-          <Link to ={'/'}><li>Log Out</li></Link>   
-
-        </ul>
-      </aside>
       <h1>Manage Products</h1>
       <div className='custom-table-container'>
       <Table striped bordered hover size="sm">

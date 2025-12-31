@@ -1,26 +1,25 @@
 import React from "react";
 import "./Doctor.css";
 import { Link } from "react-router-dom";
+import Sidebar from "../Sidebar";
 
 function DoctorHome() {
-  return (
-    <div className="doctor-dashboard">
+  const doctorLinks = [
+    { label: 'Dashboard', path: '/DoctorHome' },
+    { label: 'Community Feed', path: '/communityparticipation' },
+    { label: 'Ask Guidance', path: '/provideguidance' },
+    { label: 'Doctor Chat', path: '/DoctorChat' },
+    { label: 'Case Discussions', path: '/case-discussions' }, // Assuming route exists or placeholder
+    { label: 'My Profile', path: '/profile' }, // Assuming route exists or placeholder
+    { label: 'Support', path: '/support' }, // Assuming route exists or placeholder
+  ];
 
-      {/* Sidebar */}
-      <aside className="doctor-sidebar">
-        <h2 className="logo">Doctor Hub</h2>
-        <ul>
-          <li>Community Feed</li>
-          <li>Ask Guidance</li>
-          <li>Doctor Chat</li>
-          <li>Case Discussions</li>
-          <li>My Profile</li>
-          <li>Support</li>
-        </ul>
-      </aside>
+  return (
+    <div className="doctor-dashboard" style={{ display: 'flex' }}>
+      <Sidebar links={doctorLinks} role="Doctor" />
 
       {/* Main Area */}
-      <main className="doctor-main">
+      <main className="doctor-main" style={{ flex: 1, backgroundColor: 'var(--bg-color)' }}>
         <h1>Welcome, Doctor</h1>
         <p className="subtitle">
           Connect with verified doctors • Share knowledge • Get guidance
@@ -36,7 +35,7 @@ function DoctorHome() {
           <div className="card">
             <h3>📘 Ask Guidance</h3>
             <p>Get expert advice from senior doctors.</p>
-            <Link to ={'/provideguidance'}><button>Ask</button></Link>
+            <Link to={'/provideguidance'}><button>Ask</button></Link>
           </div>
 
           <div className="card">
