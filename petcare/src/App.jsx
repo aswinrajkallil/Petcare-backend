@@ -15,6 +15,9 @@ import ManageProducts from './components/Shop/ManageProducts'
 import TrackOrder from './components/Shop/TrackOrder'
 import CustomerSupport from './components/Shop/CustomerSupport'
 import AdminLayout from './components/Admin/AdminLayout'
+import ShopHome from './components/Shop/ShopHome'
+import DoctorHome from './components/Doctor/DoctorHome'
+import DoctorChat from './components/Doctor/DoctorChat'
 
 function App() {
 
@@ -42,6 +45,9 @@ function App() {
         </Route>
 
         {/* ###################################  SHOP  ###################################*/}
+
+
+        <Route path='/shophome' element={<ShopHome />} />
         <Route path='/shopregister' element={<ShopRegister />} />
         <Route path='/addproducts' element={<AddProducts />} />
         <Route path='/manageproducts' element={<ManageProducts />} />
@@ -49,7 +55,10 @@ function App() {
         <Route path='/customersupport' element={<CustomerSupport />} />
 
         {/* ###################################  DOCTOR ################################### */}
+
+        <Route path='/DoctorHome' element={<DoctorHome />} />
         <Route path='/registerdoctor' element={<RegisterDoctor />} />
+         <Route path='/DoctorChat' element={<DoctorChat />} />
         <Route path='/provideguidance' element={<ProvideGuidance />} />
         <Route path='/communityparticipation' element={<CommunityParticipation />} />
 

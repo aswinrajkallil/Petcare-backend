@@ -20,13 +20,22 @@ function ManageDoctor() {
    useEffect(()=>{fetchDoctor()},[])
     // console.log(doctor);
 
-    // const handleDelete = async(id)=>{
-    //   // console.log(id);
-    //   try{
-    //     cost 
-    //   }
+    const handleDelete = async(id)=>{
+      // console.log(id);
+      try{
+        const  response = await api.delete(`/admin/delete/doctor/${id}`)
+        console.log(response);
+        alert(response.data.message ||"Delete successfully")
+        fetchDoctor()
+        
+      }
+      catch(e){
+          console.error(error);
+          alert("Delete failed");
+      }
       
-    // }
+    }
+
 
   return (
     <div>
@@ -69,7 +78,7 @@ function ManageDoctor() {
   style={{width:"50px"}}
 />
 </td>
-          {/* <td><button className="btn btn-danger btn-sm ms-2" onClick={()=>handleDelete(d._id)}>Delete</button></td> */}
+          <td><button className="btn btn-danger btn-sm ms-2" onClick={()=>handleDelete(d._id)}>Delete</button></td>
           
           
         </tr>

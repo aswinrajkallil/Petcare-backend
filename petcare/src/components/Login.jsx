@@ -21,7 +21,10 @@ function Login() {
     if(res.data.role === "admin"){
       localStorage.setItem("userLoginId",res.data.loginId)
       navigate("/viewuser")
-
+    }
+    else if(res.data.role==="shop" && res.data.verfied ===true){
+    localStorage.setItem("userLoginId",res.data.loginId)  
+    navigate("/shophome")
     }
     }
     catch(e){

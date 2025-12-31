@@ -53,7 +53,7 @@ function RegisterDoctor() {
     <div className="register-doctor-container">
       
       <form className="register-doctor-form" onSubmit={Registeruser}>
-        <h1>Register <div className='docorr'>Doctor</div></h1>
+        <h1 className='text-dark'>Register <div className='docorr'>Doctor</div></h1>
         <table>
           <tbody>
 

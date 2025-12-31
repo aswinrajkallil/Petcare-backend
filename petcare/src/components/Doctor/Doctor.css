@@ -1,0 +1,150 @@
+:root {
+  --primary: #0b8793;          /* teal */
+  --primary-dark: #086f79;
+  --accent: #c99f57;           /* ORANGE used in app */
+  --bg: #f6f8f9;
+  --card: #ffffff;
+  --border: #e3e8eb;
+  --text-main: #1f2d2e;
+  --text-muted: #6b7c7d;
+  --radius: 12px;
+  --shadow: 0 10px 26px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+.doctor-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: "Inter", "Lato", sans-serif;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+.doctor-sidebar {
+  width: 260px;
+  background: linear-gradient(
+    180deg,
+    var(--primary),
+    var(--primary-dark)
+  );
+  color: #ffffff;
+  padding: 26px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  color: #ffffff;
+}
+
+.doctor-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.doctor-sidebar li {
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.doctor-sidebar li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===============================
+   MAIN
+================================ */
+.doctor-main {
+  flex: 1;
+  padding: 32px;
+}
+
+.doctor-main h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 34px;
+}
+
+/* ===============================
+   CARDS
+================================ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--card);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--accent); /* ORANGE highlight */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.card button {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent)
+  );
+  color: white;
+  border: none;
+  padding: 11px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.card button:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+  .doctor-sidebar {
+    display: none;
+  }
+
+  .doctor-main {
+    padding: 20px;
+  }
+}

@@ -20,7 +20,8 @@ export const regShop=async(req,res)=>{
         const login=await LoginData.create({
             username:email,
             password:hashedpassword,
-            role:"shop"
+            role:"shop",
+            status:false
         })
         const user=await ShopData.create({
             shopname:name,

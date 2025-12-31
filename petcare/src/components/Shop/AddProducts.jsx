@@ -1,10 +1,24 @@
 import React from 'react'
 import './shop.css'   // <-- external CSS
+import { Link } from 'react-router-dom'
 
 function AddProducts() {
   return (
    
     <div className="addproduct-container">
+
+      <aside className="sidebar">
+        <h2 className="logo">My Shop</h2>
+        <ul className="menu">
+        
+          <Link to={'/addproducts'}><li>Add Product</li></Link>
+          <Link to ={'/manageproducts'}><li>Manage Products</li></Link>
+          <Link to ={'/trackorder'}><li>Track Orders</li></Link>
+          <Link to ={'/customersupport'}><li>Customer Support</li></Link> 
+          <Link to ={'/'}><li>Log Out</li></Link>   
+
+        </ul>
+      </aside>
        
       <form className='addproduct'>
         <h1 className='producth1'>ADD PRODUCT</h1>

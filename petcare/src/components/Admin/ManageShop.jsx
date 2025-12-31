@@ -12,7 +12,7 @@ function ManageShop() {
     const fetchShop=async(req,res)=>{
     try{
       const res=await api.get("/admin/viewallShop")
-      // console.log(res)
+      console.log(res)
       setShops(res.data.shops)
     }
     catch(e){
@@ -21,7 +21,21 @@ function ManageShop() {
     }
   }
   useEffect(()=>{fetchShop()},[])
-  console.log(shops);
+  // console.log(shops);
+
+  const togglestatus=async(id,status)=>{
+    console.log(id,status);
+    try{
+      const res=await api.put(`/admin/changestatus/${id}`,{status})
+      console.log(res)
+
+    }
+    catch(e){
+      console.log(e);
+      
+    }
+    
+  }
   
   return (
     <div>
@@ -50,8 +64,8 @@ function ManageShop() {
           <td>{shop.phone}</td>
           <td>{shop.city}</td>
           <td>
-              <button className="btn btn-success btn-sm ms-2">Accept</button>
-              <button className="btn btn-danger btn-sm ms-2">Reject</button>           
+              <button className="btn btn-success btn-sm ms-2" onClick={()=>togglestatus(shop.commonkey,true)}>Accept</button>
+              <button className="btn btn-danger btn-sm ms-2" onClick={()=>togglestatus(shop.commonkey,false)}>Reject</button>           
           </td>
         </tr>
                 )}

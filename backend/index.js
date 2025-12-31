@@ -20,4 +20,5 @@ app.use("/api/register",registrationRouter)
 app.use("/api/login",loginrouter)
 app.use("/api/admin",adminrouter)
 
+
 app.use("/uploads",express.static("uploads"))
