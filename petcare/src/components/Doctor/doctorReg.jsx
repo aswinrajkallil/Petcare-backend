@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Admin.css';
+import '../Admin.css';
 import api from '../api';
-
+import {useNavigate} from 'react-router-dom'
 function RegisterDoctor() {
 
   const [form, setForm] = useState({
@@ -17,6 +17,19 @@ function RegisterDoctor() {
     cpassword: "",
   });
 
+  const initialFormState = {
+  name: "",
+  email: "",
+  qualification: "",
+  phone: "",
+  experience: "",
+  license: "",
+  clinicName: "",
+  clinicAddress: "",
+  password: "",
+  cpassword: "",
+};
+
   const [image, setImage] = useState(null);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -24,7 +37,7 @@ function RegisterDoctor() {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
+const navigate=useNavigate()
   const validate = () => {
     let err = {};
 
@@ -76,12 +89,17 @@ function RegisterDoctor() {
       });
       formdata.append("image", image);
 
-      await api.post("/register/doctor", formdata, {
+     const res = await api.post(`/register/doctor/`, formdata, {
         headers: { "Content-Type": "multipart/form-data" }
       });
+setForm(initialFormState);
+setImage(null);
+alert(data.response.message || "Registration Successful")
+navigate('/viewdoctor')
 
     } catch (error) {
       console.log(error);
+      alert(error.response.data.message || "registration failed")
     }
   };
 

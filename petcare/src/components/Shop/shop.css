@@ -189,3 +189,29 @@ button {
     gap: 0;
   }
 }
+
+/* {image preview} */
+.image-input {
+  margin-top: 6px;
+}
+
+.image-preview {
+  margin-top: 10px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.input-error {
+  border: 2px solid red !important;
+  outline: none;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 4px;
+  display: block;
+}
+

@@ -1,70 +1,168 @@
-import React from 'react'
-import './shop.css'   // <-- external CSS
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import "./shop.css";
+import api from "../api";
 
 function AddProducts() {
-  return (
-   
-    <div className="addproduct-container">
-       
-      <form className='addproduct'>
-        <h1 className='producth1'>ADD PRODUCT</h1>
-        <label>Product name</label>
-        <input type='text' />
+  const [form, setForm] = useState({
+    name: "",
+    desc: "",
+    price: "",
+    qty: "",
+    unit: "",
+  });
 
-        <label>Description</label>
-        <textarea className="desc-box"></textarea>
+  const [image, setImage] = useState(null);
+  const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+const shopLId=localStorage.getItem("userLoginId")
 
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const validate = () => {
+    let err = {};
+
+    // Required
+    Object.keys(form).forEach((key) => {
+      if (!form[key].trim()) err[key] = "This field is required";
+    });
+
+    if (!image) err.image = "Product image required";
+
+    // Price validation
+    if (form.price && form.price <= 0)
+      err.price = "Price must be greater than 0";
+
+    // Quantity validation
+    if (form.qty && form.qty <= 0)
+      err.qty = "Quantity must be greater than 0";
+
+    setErrors(err);
+    return Object.keys(err).length === 0;
+  };
+
+  const handleSubmit =async (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    if (!validate()) return;
+    try{
+       const formdata = new FormData();
+      Object.keys(form).forEach(key => {
+        if (key !== "cpassword") {
+          formdata.append(key, form[key]);
+        }
+      });
+      formdata.append("image", image);
+
+     const res = await api.post(`/shop/addproduct/${shopLId}`, formdata, {
+        headers: { "Content-Type": "multipart/form-data" }
+      });
+      console.log(res);
       
-      <label>Price</label>
-      <div className="price-row">
-      <input type="number" step="1" className="price-input" />
+// setForm(initialFormState);
+setImage(null);
+// alert(data.response.message || "Registration Successful")
+// navigate('/viewdoctor')
 
-      <select className="currency-select">
-        <option value="INR">INR ₹</option>
-        <option value="USD">USD $</option>
-        <option value="EUR">EUR €</option>
-        <option value="JPY">JPY ¥</option>
-        <option value="AED">AED د.إ</option>
-      </select>
-    </div>
-    <label>Quantity</label>
-<div className="quantity-box">
-  <input type="number" placeholder="Enter quantity" className="qty-input" />
+    }
+    catch(e){
+console.log(e);
 
-  <select className="qty-unit">
-    <option value="">Unit</option>
-
-    {/* Weight */}
-    <option value="kg">kg</option>
-    <option value="g">g</option>
-    <option value="mg">mg</option>
-    
-
-    {/* Volume */}
-    <option value="l">Litre (L)</option>
-    <option value="ml">Millilitre (mL)</option>
-
-    {/* Length */}
-    <option value="m">Meter (m)</option>
-    <option value="cm">Centimeter (cm)</option>
-
-    {/* Count */}
-    <option value="pcs">pcs</option>
-    <option value="box">box</option>
-    <option value="pack">pack</option>
-  </select>
-</div>
+    }
 
 
-        
+    alert("Product Added Successfully");
+  };
 
+  const hasError = (field) => submitted && errors[field];
 
+  return (
+    <div className="addproduct-container">
+      <form className="addproduct" onSubmit={handleSubmit}>
+        <h1 className="producth1">ADD PRODUCT</h1>
+
+        {/* Product Name */}
+        {hasError("name") && <span className="error">{errors.name}</span>}
+        <input
+          name="name"
+          placeholder="Product name"
+          onChange={handleChange}
+          className={hasError("name") ? "input-error" : ""}
+        />
+
+        {/* Description */}
+        {hasError("desc") && <span className="error">{errors.desc}</span>}
+        <textarea
+          name="desc"
+          placeholder="Description"
+          className={`desc-box ${hasError("desc") ? "input-error" : ""}`}
+          onChange={handleChange}
+        />
+
+        {/* Price */}
+        {hasError("price") && <span className="error">{errors.price}</span>}
+        <div className="price-row">
+          <input
+            type="number"
+            name="price"
+            placeholder="Price"
+            onChange={handleChange}
+            className={`price-input ${hasError("price") ? "input-error" : ""}`}
+          />
+          <select className="currency-select">
+            <option>INR ₹</option>
+            <option>USD $</option>
+            <option>EUR €</option>
+            <option>JPY ¥</option>
+          </select>
+        </div>
+
+        {/* Quantity */}
+        {hasError("qty") && <span className="error">{errors.qty}</span>}
+        <div className="quantity-box">
+          <input
+            type="number"
+            name="qty"
+            placeholder="Quantity"
+            onChange={handleChange}
+            className={`qty-input ${hasError("qty") ? "input-error" : ""}`}
+          />
+
+          <select
+            name="unit"
+            onChange={handleChange}
+            className={`qty-unit ${hasError("unit") ? "input-error" : ""}`}
+          >
+            <option value="">Unit</option>
+            <option value="kg">kg</option>
+            <option value="g">g</option>
+            <option value="pcs">pcs</option>
+            <option value="box">box</option>
+          </select>
+        </div>
+
+        {/* Image */}
+        {hasError("image") && <span className="error">{errors.image}</span>}
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
+          className={hasError("image") ? "input-error" : ""}
+        />
+
+        {image && (
+          <img
+            src={URL.createObjectURL(image)}
+            className="image-preview"
+            alt="preview"
+          />
+        )}
 
         <button type="submit">ADD</button>
       </form>
     </div>
-  )
+  );
 }
 
-export default AddProducts
+export default AddProducts;

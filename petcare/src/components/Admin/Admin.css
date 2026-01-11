@@ -11,6 +11,24 @@
   box-shadow: var(--shadow);
   border-bottom: 1px solid var(--grey-dark);
 }
+/* .error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+  display: block;
+} */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.input-error {
+  border: 1.5px solid red !important;
+}
+
+
 
 .admin-logo {
   color: var(--primary-color);

@@ -40,15 +40,17 @@ export const regShop=async(req,res)=>{
     catch(e){
         console.log(e)
         return res.status(500).json({
-            message:"server error",
+            message:"server error", 
            e
         })
     }
 }
 
 export const regDoctor=async(req,res)=>{
-    const {name,email,Phone,qualification,experience,license,clinicName,clinicAddress,password,image}=req.body
+    const {name,email,phone,qualification,experience,license,clinicName,clinicAddress,password,image}=req.body
     // console.log(req.body,"bodyyyyyyyyyyyyy", req.file.path,"filee pathhh");
+    // console.log(Phone);
+    
     
      try{
         const exist=await LoginData.findOne({
@@ -68,7 +70,7 @@ export const regDoctor=async(req,res)=>{
         })
         const user=await DoctorData.create({
             name:name,
-            phone:Phone,
+            phone,
             email,
             qualification,
             experience,

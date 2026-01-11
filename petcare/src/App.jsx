@@ -23,6 +23,8 @@ import DoctorDashboard from './components/Doctor/DoctorDashboard'
 import ShopHome from './components/Shop/ShopHome' // Keeping for backward compatibility if needed, but routes will point to ShopDashboard
 import DoctorHome from './components/Doctor/DoctorHome' // Same for DoctorHome
 import DoctorChat from './components/Doctor/DoctorChat'
+import EditProducts from './components/Shop/Editproduct'
+import DoctorGuidanceForm from './components/Doctor/addGuidance'
 
 function App() {
 
@@ -62,6 +64,8 @@ function App() {
           <Route path='/manageproducts' element={<ManageProducts />} />
           <Route path='/trackorder' element={<TrackOrder />} />
           <Route path='/customersupport' element={<CustomerSupport />} />
+          <Route path='/Editproduct/:id' element={<EditProducts />} />
+
         </Route>
 
         {/* ###################################  DOCTOR ################################### */}
@@ -71,6 +75,8 @@ function App() {
           <Route path='/DoctorChat' element={<DoctorChat />} />
           <Route path='/provideguidance' element={<ProvideGuidance />} />
           <Route path='/communityparticipation' element={<CommunityParticipation />} />
+           <Route path='/doctorGuidance' element={<DoctorGuidanceForm />} />
+
         </Route>
 
       </Routes>

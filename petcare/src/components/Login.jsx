@@ -25,6 +25,10 @@ function Login() {
         localStorage.setItem("userLoginId", res.data.loginId)
         navigate("/shophome")
       }
+      else if(res.data.role ==="doctor" && res.data.verfied === true){
+        localStorage.setItem("doctorloginid",res.data.loginId)
+        navigate("/DoctorHome")
+      }
     }
     catch (e) {
       console.log(e);

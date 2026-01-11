@@ -7,8 +7,10 @@ const DoctorLayout = () => {
     const doctorLinks = [
         { label: 'Home', path: '/DoctorHome' },
         { label: 'Community Feed', path: '/communityparticipation' },
-        { label: 'Ask Guidance', path: '/provideguidance' },
+        { label: 'Guidance', path: '/provideguidance' },
+        { label: 'Provide Guidance', path: '/doctorGuidance' },
         { label: 'Doctor Chat', path: '/DoctorChat' },
+
         // { label: 'Case Discussions', path: '/case-discussions' },
         // { label: 'My Profile', path: '/profile' },
         // { label: 'Support', path: '/support' },
